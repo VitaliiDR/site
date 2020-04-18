@@ -1,7 +1,3 @@
-//@prepros-append jq-start.js
-//@prepros-append forms.js
-//@prepros-append script.js
-//@prepros-append jq-end.js
 $(document).ready(function() {
 		var w=$(window).outerWidth();
 		var h=$(window).outerHeight();
@@ -661,13 +657,13 @@ if(isMobile.iOS()){
 //==================================================================================================================
 //==================================================================================================================
 $('.header__icon').click(function(event) {
-	$(this).addClass('active');
-	$('.header__menu').addClass('active');
-	$('.header__menu--close').addClass('close');
+	$(this).toggleClass('active');
+	$('.header__menu').toggleClass('active');
+	$('.header__menu--close').toggleClass('close');
 	if($(this).hasClass('active')){
 		$('body').data('scroll',$(window).scrollTop());
 	}
-		$('body').addClass('lock');
+		$('body').toggleClass('lock');
 	if(!$(this).hasClass('active')){
 		$('body,html').scrollTop(parseInt($('body').data('scroll')));
 	}
@@ -676,13 +672,10 @@ $('.header__menu--close').click(function(){
 	$(this).removeClass('close');
 	$('.header__menu').removeClass('active');
 	$('.header__icon').removeClass('active');
-	$('body').removeClass('lock');
 });
 //==================================================================================================================
 //==================================================================================================================
 //==================================================================================================================
-
-
 
 //ZOOM
 if($('.gallery').length>0){
@@ -943,27 +936,6 @@ function tip(){
 		onHide: function($element) {},
 	}).on('show.webui.popover hide.webui.popover', function(e){
 		$(this).toggleClass('active');
-	});
-}
-if($('.slider__body').length>0){
-	$('.slider__body').slick({
-		//autoplay: true,
-		//infinite: false,
-		dots: true,
-		arrows: false,
-		accessibility:false,
-		slidesToShow:1,
-		autoplaySpeed: 3000,
-		adaptiveHeight: true,
-		//asNavFor:'',
-		//appendDots:
-		//appendArrows:$('.mainslider-arrows .container'),
-		nextArrow:'<button type="button" class="slick-next"></button>',
-		prevArrow:'<button type="button" class="slick-prev"></button>',
-		responsive: [{
-			breakpoint: 768,
-			settings: {}
-		}]
 	});
 }
 });
