@@ -657,13 +657,13 @@ if(isMobile.iOS()){
 //==================================================================================================================
 //==================================================================================================================
 $('.header__icon').click(function(event) {
-	$(this).addClass('active');
-	$('.header__menu').addClass('active');
-	$('.header__menu--close').addClass('close');
-	if($(this).hasClass('active')){
+	$(this).toggleClass('active');
+	$('.header__menu').toggleClass('active');
+	$('.header__menu--close').toggleClass('close');
+	if($(this).toggleClass('active')){
 		$('body').data('scroll',$(window).scrollTop());
 	}
-		$('body').addClass('lock');
+		$('body').toggleClass('lock');
 	if(!$(this).hasClass('active')){
 		$('body,html').scrollTop(parseInt($('body').data('scroll')));
 	}
