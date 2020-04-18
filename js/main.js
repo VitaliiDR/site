@@ -657,13 +657,13 @@ if(isMobile.iOS()){
 //==================================================================================================================
 //==================================================================================================================
 $('.header__icon').click(function(event) {
-	$(this).toggleClass('active');
-	$('.header__menu').toggleClass('active');
-	$('.header__menu--close').toggleClass('close');
+	$(this).addClass('active');
+	$('.header__menu').addClass('active');
+	$('.header__menu--close').addClass('close');
 	if($(this).hasClass('active')){
 		$('body').data('scroll',$(window).scrollTop());
 	}
-		$('body').toggleClass('lock');
+		$('body').addClass('lock');
 	if(!$(this).hasClass('active')){
 		$('body,html').scrollTop(parseInt($('body').data('scroll')));
 	}
@@ -672,6 +672,7 @@ $('.header__menu--close').click(function(){
 	$(this).removeClass('close');
 	$('.header__menu').removeClass('active');
 	$('.header__icon').removeClass('active');
+	$('body').removeClass('lock');
 });
 //==================================================================================================================
 //==================================================================================================================
