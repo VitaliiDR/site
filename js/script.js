@@ -49,6 +49,7 @@ class Game{
 		this.groundItem = [];
 		this.paused = true;
 		this.pauseTap = true;
+		this.phone = false;
 	}
 	start(){
 		for(let i = 0; i < Math.floor(width/210 + 3); i++){
@@ -80,6 +81,9 @@ class Game{
 	update(){
 		if(height <= 700){
 			this.paused = false;
+			game.person.image.src = 'img/1.png';
+			this.phone = true;
+
 		}
 		if(!this.stop && !this.paused){
 			for(let i = 0; i < this.obstacle.length; i++){
@@ -123,29 +127,31 @@ class Person{
 		this.gravitation = this.dymax/2;
 	}
 	update(){
-		this.chance ++;
-		this.persent = this.chance%49;
+		if(!game.phone){
+			this.chance ++;
+			this.persent = this.chance%49;
 
-		if(this.persent >= 0 && this.persent < 7){
-			this.image.src = 'img/1.png';
-		}else 
-		if(this.persent >= 7 && this.persent < 14){
-			this.image.src = 'img/2.png';
-		}else
-		if(this.persent >= 14 && this.persent < 21){
-			this.image.src = 'img/3.png';
-		}else
-		if(this.persent >= 21 && this.persent < 28){
-			this.image.src = 'img/4.png';
-		}else
-		if(this.persent >= 28 && this.persent < 35){
-			this.image.src = 'img/5.png';
-		}else
-		if(this.persent >= 35 && this.persent < 42){
-			this.image.src = 'img/6.png';
-		}else
-		if(this.persent >= 42 && this.persent < 49){
-			this.image.src = 'img/7.png';
+			if(this.persent >= 0 && this.persent < 7){
+				this.image.src = 'img/1.png';
+			}else 
+			if(this.persent >= 7 && this.persent < 14){
+				this.image.src = 'img/2.png';
+			}else
+			if(this.persent >= 14 && this.persent < 21){
+				this.image.src = 'img/3.png';
+			}else
+			if(this.persent >= 21 && this.persent < 28){
+				this.image.src = 'img/4.png';
+			}else
+			if(this.persent >= 28 && this.persent < 35){
+				this.image.src = 'img/5.png';
+			}else
+			if(this.persent >= 35 && this.persent < 42){
+				this.image.src = 'img/6.png';
+			}else
+			if(this.persent >= 42 && this.persent < 49){
+				this.image.src = 'img/7.png';
+			}
 		}
 
 		this.position.y += this.gravitation;
