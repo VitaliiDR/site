@@ -2,37 +2,14 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	background: #333;
+}
+body{
+	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-.block {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	min-height: 100vh;
-	color: #fff;
 }
-.text {
-	font-size: 20px;
-	text-transform: uppercase;
-	margin-bottom: 30px;
-	max-width: 30px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-span{
-	margin-bottom: 10px;
-}
-.btn {
-	border: none;
-	background: #248;
-	overflow: hidden;
-	font-size: 26px;
-	border-radius: 50px;
-	padding: 30px 60px;
-	color: #fff;
+canvas{
+	display: block;
 }
